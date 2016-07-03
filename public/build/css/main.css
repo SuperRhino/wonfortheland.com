@@ -25,6 +25,7 @@ body {
 }
 .jumbotron-sm {
   height: 150px;
+  min-height: auto;
 }
 .jumbotron h1 {
   color: #f0b44b;
@@ -32,7 +33,7 @@ body {
 }
 .jumbotron p {
   font-weight: normal;
-  text-shadow: 1px 1px 3px #888;
+  text-shadow: 1px 1px 0px #fff;
 }
 h2.main-subhead {
   color: #691e32;
