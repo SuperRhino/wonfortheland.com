@@ -89,3 +89,18 @@ h4 {
 .glyphicon-5x {
   font-size: 5em;
 }
+.btn-primary {
+  background-image: none;
+  background-color: #691e32;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #912945;
+}
+a {
+  color: #dc9312;
+}
+a:hover,
+a:focus {
+  color: #f0b44b;
+}

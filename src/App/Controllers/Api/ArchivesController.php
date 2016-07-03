@@ -22,6 +22,9 @@ class ArchivesController extends BaseApiController
             throw new BadRequestException('Title is required.');
         }
 
+        // specials:
+        $data['status'] = 1;
+
         $archive = (new Archive($data))->save();
 
         return $this->success($archive->toArray());

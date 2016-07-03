@@ -90,3 +90,21 @@ h4 {color: @cavs_wine;}
 .glyphicon-3x{font-size: 3em;}
 .glyphicon-4x{font-size: 4em;}
 .glyphicon-5x{font-size: 5em;}
+
+.btn-primary {
+  background-image: none;
+  background-color: @cavs_wine;
+  &:hover,
+  &:focus {
+    background-color: lighten(@cavs_wine, 10%);
+  }
+}
+
+a {
+  color: darken(@cavs_gold, 15%);
+}
+
+a:hover,
+a:focus {
+  color: @cavs_gold;
+}
