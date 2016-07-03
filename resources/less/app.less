@@ -1,0 +1,92 @@
+/* ==============
+ Variables
+ ============= */
+@cavs_wine: rgb(105,30,50);
+@cavs_gold: rgb(240,180,75);
+@cavs_black: rgb(21,22,26);
+@cavs_blue: rgb(40,60,120);
+@cavs_orange: rgb(214,111,55);
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+* { box-sizing: border-box; }
+body {
+   padding-top: 50px;
+   padding-bottom: 20px;
+   color: @cavs_black;
+}
+
+.jumbotron {
+  height: e("calc(100vh - 50px)");
+  padding-bottom: 0;
+
+  background-image: url(/images/champions.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.jumbotron-sm {
+  height: 150px;
+}
+.jumbotron h1 {
+  color: @cavs_gold;
+  text-shadow: 1px 1px 3px @cavs_black;
+}
+h2.main-subhead {
+  color: @cavs_wine;
+  font-size: 24px;
+  font-style: italic;
+  margin: 10px 0 20px;
+}
+h4 {color: @cavs_wine;}
+.jumbotron .container {
+  background-color: rgba(255,255,255,.75);
+  border-radius: 10px;
+  padding-bottom: 20px;
+}
+.jumbotron-actions {
+  display: flex;
+}
+.jumbotron-actions a {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid @cavs_black;
+  border-right: 1px solid @cavs_black;
+  padding: 20px 10px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.2s ease-in;
+  color: fadeout(@cavs_gold, 25%);
+  background-color: fadeout(@cavs_wine, 25%);
+
+  &:hover, &:active, &:focus {
+    color: fadeout(@cavs_wine, 25%);
+    background-color: fadeout(@cavs_gold, 25%);
+  }
+}
+
+.medium-editor-placeholder:after {
+  color: #aaa;
+  font-style: normal;
+}
+
+.jumbotron .dz-message {
+  margin: 0;
+}
+
+.glyphicon-2x{font-size: 2em;}
+.glyphicon-3x{font-size: 3em;}
+.glyphicon-4x{font-size: 4em;}
+.glyphicon-5x{font-size: 5em;}

@@ -1,0 +1,19 @@
+{
+  "name": "wonfortheland.com",
+  "version": "1.0.0",
+  "authors": [
+    "rpastorelle"
+  ],
+  "copyright": "WonForTheLand",
+  "description": "Won For The Land",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {}
+}

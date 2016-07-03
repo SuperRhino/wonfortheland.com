@@ -1,0 +1,53 @@
+<!doctype html>
+<html class="no-js" lang="">
+{% include "_includes/head.html" %}
+<body>
+    {% include "_includes/navbar.html" %}
+
+    <!-- Main jumbotron -->
+    <div class="jumbotron jumbotron-sm"></div>
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-xs-12 col-md-8">
+
+          <h1>{{ data.archive.title }}</h1>
+
+          <article>
+            <p>
+              <span class="glyphicon glyphicon-calendar"></span>
+              {{ data.archive.post_date|date("M j, Y") }}
+              by {{ data.archive.author_name }}
+              <span class="label label-danger">{{ data.archive.category }}</span>
+            </p>
+            <hr />
+            <p>
+              <a href="{{ data.archive.link_url }}">
+                <img class="img-responsive" src="{{ data.archive.image }}" alt="" />
+              </a>
+            </p>
+            <p class="lead">
+              {{ data.archive.description }}
+            </p>
+
+            <h4 class="pull-right">
+              <a href="{{ data.archive.link_url }}">View Original</a>
+            </h4>
+          </article>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-xs-12 col-md-4">
+          {% include "_includes/sidenav.html" %}
+        </div>
+
+      </div>
+
+      {% include "_includes/footer.html" %}
+    </div>
+
+    {% include "_includes/scripts.html" %}
+</body>
+</html>
