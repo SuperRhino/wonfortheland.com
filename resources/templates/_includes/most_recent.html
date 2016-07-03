@@ -1,0 +1,26 @@
+{% for row in data.pages|batch(3) %}
+  <div class="row">
+    {% for page in row %}
+    <div class="col-sm-4">
+      {% if page.image %}
+      {% if page.uri %}
+      <a href="{{ page.uri }}">
+        <img src="{{ page.image }}" alt="{{ page.title }}" class="img-responsive" />
+      </a>
+      {% else %}
+      <img src="{{ page.image }}" alt="{{ page.title }}" class="img-responsive" />
+      {% endif %}
+      {% endif %}
+
+      {% if page.uri %}
+      <h2><a href="{{ page.uri }}">{{ page.title }}</a></h2>
+      {% else %}
+      <h2>{{ page.title }}</h2>
+      {% endif %}
+
+      <p><em>{{ page.updated_date is empty ? page.post_date|date("M j, Y") : page.updated_date|date("M j, Y") }}</em></p>
+      <p>{{ page.description }}</p>
+    </div>
+    {% endfor %}
+  </div>
+{% endfor %}

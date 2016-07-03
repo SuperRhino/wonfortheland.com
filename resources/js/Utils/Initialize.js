@@ -27,10 +27,10 @@ export default class Initialize {
     }
 
     // Show that user nav:
-    ReactDOM.render(
-      <UserNav />,
-      document.getElementById('UserNav')
-    );
+    // ReactDOM.render(
+    //   <UserNav />,
+    //   document.getElementById('UserNav')
+    // );
   }
 
   static authUser() {

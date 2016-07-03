@@ -1,27 +1,15 @@
-<div class="well">
+<div class="well sidenav">
     <h4 class="sr-only">Quick Links</h4>
     <h5><a href="/archives" class="btn btn-primary btn-block btn-lg">View All Archives</a></h5>
     <div class="row">
-        <div class="col-xs-6">
-            <ul class="list-unstyled">
-                <li><a href="/archives/Memes">Memes</a>
-                </li>
-                <li><a href="/archives/Articles">Articles</a>
-                </li>
-                <li><a href="/archives/Media">Media</a>
-                </li>
-            </ul>
-        </div>
-        <div class="col-xs-6">
-            <ul class="list-unstyled">
-                <li><a href="/archives/Celebration">Celebration</a>
-                </li>
-                <li><a href="/archives/{{ 'The Finals'|url_encode }}">The Finals</a>
-                </li>
-                <li><a href="/archives/add">Add an Archive</a>
-                </li>
-            </ul>
+        <div class="col-xs-12">
+          <a href="/archives/Memes" class="list-group-item">Memes</a>
+          <a href="/archives/Articles" class="list-group-item">Articles</a>
+          <a href="/archives/Media" class="list-group-item">Media</a>
+          <a href="/archives/Celebration" class="list-group-item">Celebration</a>
+          <a href="/archives/{{ 'The Finals'|url_encode }}" class="list-group-item">The Finals</a>
         </div>
     </div>
     <!-- /.row -->
+    <h5><a href="/archives/add" class="btn btn-warning btn-block btn-lg">Add an Archive</a></h5>
 </div>
