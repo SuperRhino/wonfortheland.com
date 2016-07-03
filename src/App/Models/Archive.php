@@ -32,7 +32,7 @@ class Archive extends Model {
         $this->description = array_get($values, 'description');
         $this->image = array_get($values, 'image');
         $this->link_url = array_get($values, 'link_url');
-        $this->category = array_get($values, 'category', 'Other') ?: 'Other';
+        $this->category = array_get($values, 'category', 'Articles') ?: 'Articles';
         $this->keywords = array_get($values, 'keywords');
         $this->author_user_id = (int) array_get($values, 'author_user_id') ?: null;
         $this->author_name = array_get($values, 'author_name', 'Anonymous') ?: 'Anonymous';
