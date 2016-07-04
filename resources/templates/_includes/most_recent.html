@@ -1,7 +1,7 @@
 {% for row in data.pages|batch(3) %}
   <div class="row">
     {% for page in row %}
-    <div class="col-xs-12 col-sm-6 col-md-4">
+    <div class="col-xs-12 col-sm-6 col-md-4 most-recent-archive">
       {% if page.image %}
       {% if page.uri %}
       <a href="{{ page.uri }}">
@@ -20,6 +20,7 @@
 
       <p><em>{{ page.updated_date is empty ? page.post_date|date("M j, Y") : page.updated_date|date("M j, Y") }}</em></p>
       <p>{{ page.description }}</p>
+      <hr />
     </div>
     {% endfor %}
   </div>

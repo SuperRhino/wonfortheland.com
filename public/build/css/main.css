@@ -127,3 +127,6 @@ code {
   background-color: #691e32;
   color: #f0b44b;
 }
+.most-recent-archive hr {
+  width: 80%;
+}
