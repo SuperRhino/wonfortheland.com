@@ -118,3 +118,18 @@ a:hover,
 a:focus {
   color: @cavs_gold;
 }
+
+h4 a {
+  color: @cavs_wine;
+  text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    color: lighten(@cavs_wine, 15%);
+  }
+}
+
+code {
+  background-color: @cavs_wine;
+  color: @cavs_gold;
+}

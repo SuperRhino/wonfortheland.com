@@ -10,7 +10,7 @@ class HomeController extends BaseController
     public function index()
     {
         $data = [
-            'pages' => Archive::findMostRecent(9),
+            'pages' => Archive::findMostRecent(33),
         ];
 
         return $this->view('home.html', $data);

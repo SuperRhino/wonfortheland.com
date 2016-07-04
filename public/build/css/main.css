@@ -114,3 +114,15 @@ a:hover,
 a:focus {
   color: #f0b44b;
 }
+h4 a {
+  color: #691e32;
+  text-decoration: underline;
+}
+h4 a:hover,
+h4 a:focus {
+  color: #a42f4e;
+}
+code {
+  background-color: #691e32;
+  color: #f0b44b;
+}
