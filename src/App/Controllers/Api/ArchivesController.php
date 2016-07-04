@@ -38,7 +38,8 @@ class ArchivesController extends BaseApiController
 
         $fileKey    = 'file';
         $tmpFile    = $_FILES[$fileKey]['tmp_name'];
-        $targetName = basename($_FILES[$fileKey]['name']);
+        $targetExt  = pathinfo($_FILES[$fileKey]['name'], PATHINFO_EXTENSION);
+        $targetName = md5(basename($_FILES[$fileKey]['name']) . time()) . '.' . $targetExt;
         $targetPath = $this->app->getSetting('base_path') . $this->app->getSetting('app.paths.upload_path');
         $targetFile = $targetPath .'/'. $targetName;
         $fileUri    = $this->app->getSetting('app.paths.upload_dir') .'/'. $targetName;
@@ -52,6 +53,7 @@ class ArchivesController extends BaseApiController
         // TODO Insert Into DB
 
         return $this->success([
+            'target_name' => $targetName,
             'file_uri' => $fileUri,
         ]);
     }
