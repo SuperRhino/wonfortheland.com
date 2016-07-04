@@ -104,6 +104,7 @@ h4 {
 .btn-primary:focus {
   background-color: #912945;
 }
+.btn-default,
 .btn-warning {
   background-image: none;
 }

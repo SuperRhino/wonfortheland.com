@@ -14,7 +14,7 @@
         <div class="col-xs-12 col-md-8">
 
           <h1>
-            <a href="{{ data.archive.link_url }}">{{ data.archive.title }}</a>
+            <a href="{{ data.archive.link_url }}" target="_blank">{{ data.archive.title }}</a>
           </h1>
 
           <article>
@@ -26,7 +26,7 @@
             </p>
             <hr />
             <p>
-              <a href="{{ data.archive.link_url }}">
+              <a href="{{ data.archive.link_url }}" target="_blank">
                 <img class="img-responsive" src="{{ data.archive.image }}" alt="" />
               </a>
             </p>
@@ -34,9 +34,9 @@
               {{ data.archive.description }}
             </p>
 
-            <h4 class="pull-right">
-              <a href="{{ data.archive.link_url }}">View Original</a>
-            </h4>
+            <p>
+              <a href="{{ data.archive.link_url }}" target="_blank" class="btn btn-default btn-block btn-lg">View Original</a>
+            </p>
           </article>
         </div>
 
