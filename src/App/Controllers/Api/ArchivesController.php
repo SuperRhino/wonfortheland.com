@@ -38,7 +38,7 @@ class ArchivesController extends BaseApiController
 
         $fileKey    = 'file';
         $tmpFile    = $_FILES[$fileKey]['tmp_name'];
-        $targetName = basename($_FILES[$fileKey]['name']);
+        $targetName = md5(basename($_FILES[$fileKey]['name'])) . time();
         $targetPath = $this->app->getSetting('base_path') . $this->app->getSetting('app.paths.upload_path');
         $targetFile = $targetPath .'/'. $targetName;
         $fileUri    = $this->app->getSetting('app.paths.upload_dir') .'/'. $targetName;
