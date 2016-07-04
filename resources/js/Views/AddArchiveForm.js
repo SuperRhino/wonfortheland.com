@@ -18,10 +18,36 @@ export default class AddArchiveForm extends React.Component {
       link_url: null,
       category: null,
       image: null,
+      author_name: null,
+      author_twitter: null,
+      author_url: null,
     };
 
     this.onSubmit = this.onSubmit.bind(this);
     this.onSuccess = this.onSuccess.bind(this);
+  }
+
+  componentWillMount() {
+    let author = this.getAuthor();
+    this.setState({
+      author_name: author.name || null,
+      author_twitter: author.twitter || null,
+      author_url: author.url || null,
+    })
+  }
+
+  getAuthor() {
+    return {
+      name: localStorage.getItem('author_name') || null,
+      twitter: localStorage.getItem('author_twitter') || null,
+      url: localStorage.getItem('author_url') || null,
+    };
+  }
+
+  saveAuthor(author_name, author_twitter, author_url) {
+    if (!! author_name) localStorage.setItem('author_name', author_name);
+    if (!! author_twitter) localStorage.setItem('author_twitter', author_twitter);
+    if (!! author_url) localStorage.setItem('author_url', author_url);
   }
 
   render() {
@@ -63,9 +89,50 @@ export default class AddArchiveForm extends React.Component {
         </div>
         {this.renderCategoryInput()}
         {this.renderImageInput()}
+        {this.renderAuthorInputs()}
         <button type="submit" className="btn btn-primary btn-block btn-lg" {...buttonProps}>Submit</button>
       </form>
     );
+  }
+
+  renderAuthorInputs() {
+    return (
+      <div className="form-group form-group-sm">
+        <label htmlFor="authorNameInput">Author</label>
+        <div className="row">
+          <div className="col-xs-6">
+            <input
+              id="authorNameInput"
+              type="text"
+              className="form-control input-lg"
+              placeholder="Your Name"
+              value={this.state.author_name}
+              onChange={e => this.setState({author_name: e.target.value})}
+            />
+          </div>
+          <div className="col-xs-6">
+            <input
+              id="authorTwitterInput"
+              type="text"
+              className="form-control input-lg"
+              placeholder="@twitter"
+              value={this.state.author_twitter}
+              onChange={e => this.setState({author_twitter: e.target.value})}
+            />
+          </div>
+        </div>
+      </div>
+    );
+    // <div className="col-xs-4">
+    //   <input
+    //     id="authorUrlInput"
+    //     type="text"
+    //     className="form-control input-lg"
+    //     placeholder="http://your.url.com/"
+    //     value={this.state.author_url}
+    //     onChange={e => this.setState({author_url: e.target.value})}
+    //   />
+    // </div>
   }
 
   renderImageInput() {
@@ -114,6 +181,9 @@ export default class AddArchiveForm extends React.Component {
       category: this.state.category,
       link_url: this.state.link_url,
       image: this.state.image,
+      author_name: this.state.author_name,
+      author_twitter: this.state.author_twitter,
+      author_url: this.state.author_url,
     };
 
     console.log("archives:", data);
@@ -124,8 +194,25 @@ export default class AddArchiveForm extends React.Component {
   }
 
   onSuccess(res) {
+    var author_name = this.state.author_name,
+        author_twitter = this.state.author_twitter,
+        author_url = this.state.author_url;
+
+    this.saveAuthor(author_name, author_twitter, author_url);
+
     this.refs.archiveForm.reset();
     this.refs.srDropzone.cleanDropzone();
+    this.setState({
+      enabled: true,
+      title: null,
+      description: null,
+      link_url: null,
+      category: null,
+      image: null,
+      author_name,
+      author_url,
+    });
+
     Utils.showSuccess("Thanks & Go CAVS!");
   }
 }

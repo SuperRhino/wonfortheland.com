@@ -21,7 +21,12 @@
             <p>
               <span class="glyphicon glyphicon-calendar"></span>
               {{ data.archive.post_date|date("M j, Y") }}
-              by {{ data.archive.author_name }}
+              by
+              {% if data.archive.author_twitter %}
+                <a href="https://twitter.com/{{ data.archive.author_twitter }}" target="_blank">{{ data.archive.author_name }}</a>
+              {% else %}
+                {{ data.archive.author_name }}
+              {% endif %}
               <span class="label label-danger">{{ data.archive.category }}</span>
             </p>
             <hr />
