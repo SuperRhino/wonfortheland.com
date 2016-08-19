@@ -14,3 +14,11 @@
 ## Run Migrations
 
 1. Run migrations: `vendor/bin/phinx migrate`
+
+## Gulp Tasks
+
+**You must have [Browserify](http://browserify.org/) installed: `npm install -g browserify`**
+
+* Build App: `gulp [--production]`
+* Build App and Watch: `gulp watch`
+* More: `gulp --tasks`
