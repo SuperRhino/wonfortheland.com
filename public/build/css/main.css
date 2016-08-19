@@ -13,7 +13,6 @@ body {
   color: #15161a;
 }
 .jumbotron {
-  min-height: calc(100vh - 50px);
   padding-bottom: 0;
   background-image: url(/images/champions.jpg);
   background-position: center center;
@@ -24,7 +23,6 @@ body {
   justify-content: space-between;
 }
 .jumbotron-sm {
-  height: 150px;
   min-height: auto;
 }
 .jumbotron h1 {
@@ -129,4 +127,5 @@ code {
 }
 .most-recent-archive hr {
   width: 80%;
+  border-color: #691e32;
 }
