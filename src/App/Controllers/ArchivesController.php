@@ -10,7 +10,7 @@ class ArchivesController extends BaseController
     public function index()
     {
         $data = [
-            'pages' => Archive::findMostRecent(6),
+            'pages' => Archive::findMostRecent(99),
         ];
 
         return $this->view('archives.html', $data);
